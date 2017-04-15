@@ -9,7 +9,7 @@
 }
 
 <h2 class="@className">@Model.Movie.Name   </h2>
-@if(Model.Customers.Count == 0)
+@if(!Model.Any())
 {
     <text> No one has rented the movie</text>
 }

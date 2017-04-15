@@ -1,5 +1,4 @@
 ﻿using MovieLibrary.Models;
-using MovieLibrary.ViewModel;
 using System.Collections.Generic;
 using System.Web.Mvc;
 
@@ -8,32 +7,27 @@ namespace MovieLibrary.Controllers
     public class MoviesController : Controller
     {
         // GET: Movies
-        public ActionResult Random()
+        public ActionResult Index()
         {
-            var movie = new Movie
-            {
-                Name = "Shrek"
-            };
+            return View(GetMovies());
+        }
 
-            var customers = new List<Customer>
+        private IEnumerable<Movie> GetMovies()
+        {
+            return new List<Movie>
             {
-                new Customer
+                new Movie
                 {
-                    Name = "Tanuj"
+                    Id=1,
+                    Name="Shrek"
                 },
-                new Customer
+                new Movie
                 {
-                    Name ="Nayanam"
+                    Id =2,
+                    Name="Forest Gump"
                 }
             };
-
-            var viewModel = new RandomMovieViewModel
-            {
-                Customers = customers,
-                Movie = movie
-            };
-
-            return View(viewModel);
         }
+
     }
 }
