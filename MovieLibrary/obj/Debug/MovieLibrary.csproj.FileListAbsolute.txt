@@ -80,3 +80,8 @@ C:\Users\lenovo\Documents\Visual Studio 2015\Projects\MovieLibrary\MovieLibrary\
 C:\Users\lenovo\Documents\Visual Studio 2015\Projects\MovieLibrary\MovieLibrary\obj\Debug\MovieLibrary.csprojResolveAssemblyReference.cache
 C:\Users\lenovo\Documents\Visual Studio 2015\Projects\MovieLibrary\MovieLibrary\obj\Debug\MovieLibrary.dll
 C:\Users\lenovo\Documents\Visual Studio 2015\Projects\MovieLibrary\MovieLibrary\obj\Debug\MovieLibrary.pdb
+C:\Users\lenovo\Documents\Visual Studio 2015\Projects\MovieLibrary\MovieLibrary\obj\Debug\MovieLibrary.Migrations.InitialModel.resources
+C:\Users\lenovo\Documents\Visual Studio 2015\Projects\MovieLibrary\MovieLibrary\obj\Debug\MovieLibrary.csproj.GenerateResource.Cache
+C:\Users\lenovo\Documents\Visual Studio 2015\Projects\MovieLibrary\MovieLibrary\obj\Debug\MovieLibrary.Migrations.subscribed.resources
+C:\Users\lenovo\Documents\Visual Studio 2015\Projects\MovieLibrary\MovieLibrary\obj\Debug\MovieLibrary.Migrations.AddMembership.resources
+C:\Users\lenovo\Documents\Visual Studio 2015\Projects\MovieLibrary\MovieLibrary\obj\Debug\MovieLibrary.Migrations.populate.resources
