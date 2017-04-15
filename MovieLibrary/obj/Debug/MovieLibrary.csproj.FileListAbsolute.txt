@@ -85,3 +85,6 @@ C:\Users\lenovo\Documents\Visual Studio 2015\Projects\MovieLibrary\MovieLibrary\
 C:\Users\lenovo\Documents\Visual Studio 2015\Projects\MovieLibrary\MovieLibrary\obj\Debug\MovieLibrary.Migrations.subscribed.resources
 C:\Users\lenovo\Documents\Visual Studio 2015\Projects\MovieLibrary\MovieLibrary\obj\Debug\MovieLibrary.Migrations.AddMembership.resources
 C:\Users\lenovo\Documents\Visual Studio 2015\Projects\MovieLibrary\MovieLibrary\obj\Debug\MovieLibrary.Migrations.populate.resources
+C:\Users\lenovo\Documents\Visual Studio 2015\Projects\MovieLibrary\MovieLibrary\obj\Debug\MovieLibrary.Migrations.applyannotation.resources
+C:\Users\lenovo\Documents\Visual Studio 2015\Projects\MovieLibrary\MovieLibrary\obj\Debug\MovieLibrary.Migrations.addname.resources
+C:\Users\lenovo\Documents\Visual Studio 2015\Projects\MovieLibrary\MovieLibrary\obj\Debug\MovieLibrary.Migrations.insesrtvalue.resources
