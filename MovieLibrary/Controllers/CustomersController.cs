@@ -19,10 +19,10 @@ namespace MovieLibrary.Controllers
             _context.Dispose();
         }
 
-        public ActionResult New()
+        public ActionResult CustomerForm()
         {
             var membershipTypes = _context.MembershipTypes.ToList();
-            var viewModel = new NewCustomerViewModel
+            var viewModel = new CustomerFormViewModel
             {
                 MembershipTypes = membershipTypes,
             };
@@ -31,7 +31,7 @@ namespace MovieLibrary.Controllers
         }
 
         [HttpPost]
-        public ActionResult Create(NewCustomerViewModel viewModel)
+        public ActionResult Create(CustomerFormViewModel viewModel)
         {
             var customer = new Customer
             {
@@ -41,9 +41,24 @@ namespace MovieLibrary.Controllers
                 MembershipTypeId = viewModel.Customer.MembershipTypeId
             };
 
-            _context.Customers.Add(customer);
-            _context.SaveChanges();
-            return RedirectToAction("Index", "Home");
+            _context.Customers.Add(customer); // in memory
+            _context.SaveChanges(); // save to Db
+            return RedirectToAction("Index", "Customers");
+        }
+
+        public ActionResult Edit(int id)
+        {
+            var customer = _context.Customers
+                .SingleOrDefault(c => c.Id == id);
+            var membershipTypes = _context.MembershipTypes.ToList();
+            if (customer == null)
+                return HttpNotFound();
+            var viewModel = new CustomerFormViewModel
+            {
+                Customer = customer,
+                MembershipTypes = membershipTypes
+            };
+            return View("CustomerForm", viewModel);
         }
 
         // GET: Customers
