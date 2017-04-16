@@ -31,7 +31,7 @@ namespace MovieLibrary.Controllers
         }
 
         [HttpPost]
-        public ActionResult New(NewCustomerViewModel viewModel)
+        public ActionResult Create(NewCustomerViewModel viewModel)
         {
             var customer = new Customer
             {
