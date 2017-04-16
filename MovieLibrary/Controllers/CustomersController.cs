@@ -31,17 +31,19 @@ namespace MovieLibrary.Controllers
         }
 
         [HttpPost]
-        public ActionResult Create(CustomerFormViewModel viewModel)
+        public ActionResult Save(Customer customer)
         {
-            var customer = new Customer
+            if (customer.Id == 0)
+                _context.Customers.Add(customer); // in memory
+            else
             {
-                Birthdate = viewModel.Customer.Birthdate,
-                Name = viewModel.Customer.Name,
-                IsSubscribedToNewsletter = viewModel.Customer.IsSubscribedToNewsletter,
-                MembershipTypeId = viewModel.Customer.MembershipTypeId
-            };
+                var customerInDb = _context.Customers.Single(c => c.Id == customer.Id);
+                customerInDb.Birthdate = customer.Birthdate;
+                customerInDb.IsSubscribedToNewsletter = customer.IsSubscribedToNewsletter;
+                customerInDb.MembershipTypeId = customer.MembershipTypeId;
+                customerInDb.Name = customer.Name;
+            }
 
-            _context.Customers.Add(customer); // in memory
             _context.SaveChanges(); // save to Db
             return RedirectToAction("Index", "Customers");
         }
@@ -51,12 +53,15 @@ namespace MovieLibrary.Controllers
             var customer = _context.Customers
                 .SingleOrDefault(c => c.Id == id);
             var membershipTypes = _context.MembershipTypes.ToList();
+
             if (customer == null)
                 return HttpNotFound();
+
             var viewModel = new CustomerFormViewModel
             {
                 Customer = customer,
                 MembershipTypes = membershipTypes
+
             };
             return View("CustomerForm", viewModel);
         }
@@ -67,6 +72,7 @@ namespace MovieLibrary.Controllers
             var customers = _context.Customers
                 .Include(c => c.MembershipType)
                 .ToList();
+
             return View(customers);
         }
 
