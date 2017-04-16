@@ -19,7 +19,7 @@ namespace MovieLibrary.Controllers
             _context.Dispose();
         }
 
-        public ActionResult CustomerForm()
+        public ActionResult New()
         {
             var membershipTypes = _context.MembershipTypes.ToList();
             var viewModel = new CustomerFormViewModel
@@ -27,7 +27,7 @@ namespace MovieLibrary.Controllers
                 MembershipTypes = membershipTypes,
             };
 
-            return View(viewModel);
+            return View("CustomerForm", viewModel);
         }
 
         [HttpPost]
