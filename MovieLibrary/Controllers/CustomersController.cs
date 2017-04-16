@@ -1,8 +1,8 @@
 ﻿using MovieLibrary.Models;
+using MovieLibrary.ViewModel;
 using System.Data.Entity;
 using System.Linq;
 using System.Web.Mvc;
-
 namespace MovieLibrary.Controllers
 {
     public class CustomersController : Controller
@@ -21,7 +21,29 @@ namespace MovieLibrary.Controllers
 
         public ActionResult New()
         {
-            return View();
+            var membershipTypes = _context.MembershipTypes.ToList();
+            var viewModel = new NewCustomerViewModel
+            {
+                MembershipTypes = membershipTypes,
+            };
+
+            return View(viewModel);
+        }
+
+        [HttpPost]
+        public ActionResult New(NewCustomerViewModel viewModel)
+        {
+            var customer = new Customer
+            {
+                Birthdate = viewModel.Customer.Birthdate,
+                Name = viewModel.Customer.Name,
+                IsSubscribedToNewsletter = viewModel.Customer.IsSubscribedToNewsletter,
+                MembershipTypeId = viewModel.Customer.MembershipTypeId
+            };
+
+            _context.Customers.Add(customer);
+            _context.SaveChanges();
+            return RedirectToAction("Index", "Home");
         }
 
         // GET: Customers
