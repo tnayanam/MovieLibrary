@@ -91,3 +91,4 @@ C:\Users\lenovo\Documents\Visual Studio 2015\Projects\MovieLibrary\MovieLibrary\
 C:\Users\lenovo\Documents\Visual Studio 2015\Projects\MovieLibrary\MovieLibrary\obj\Debug\MovieLibrary.Migrations.updateDOB.resources
 C:\Users\lenovo\Documents\Visual Studio 2015\Projects\MovieLibrary\MovieLibrary\obj\Debug\MovieLibrary.Migrations.creategenreandmovie.resources
 C:\Users\lenovo\Documents\Visual Studio 2015\Projects\MovieLibrary\MovieLibrary\obj\Debug\MovieLibrary.Migrations.addseeddatatogenre.resources
+C:\Users\lenovo\Documents\Visual Studio 2015\Projects\MovieLibrary\MovieLibrary\obj\Debug\MovieLibrary.Migrations.changedatatype.resources

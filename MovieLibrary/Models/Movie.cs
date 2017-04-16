@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System;
+using System.ComponentModel.DataAnnotations;
 
 namespace MovieLibrary.Models
 {
@@ -10,9 +11,9 @@ namespace MovieLibrary.Models
         [StringLength(255)]
         public string Name { get; set; }
 
-        public DataType DateAdded { get; set; }
+        public DateTime DateAdded { get; set; }
 
-        public DataType ReleaseDate { get; set; }
+        public DateTime ReleaseDate { get; set; }
 
         [Required]
         public Genre Genre { get; set; }
