@@ -92,3 +92,11 @@ C:\Users\lenovo\Documents\Visual Studio 2015\Projects\MovieLibrary\MovieLibrary\
 C:\Users\lenovo\Documents\Visual Studio 2015\Projects\MovieLibrary\MovieLibrary\obj\Debug\MovieLibrary.Migrations.creategenreandmovie.resources
 C:\Users\lenovo\Documents\Visual Studio 2015\Projects\MovieLibrary\MovieLibrary\obj\Debug\MovieLibrary.Migrations.addseeddatatogenre.resources
 C:\Users\lenovo\Documents\Visual Studio 2015\Projects\MovieLibrary\MovieLibrary\obj\Debug\MovieLibrary.Migrations.changedatatype.resources
+C:\Users\lenovo\Documents\Visual Studio 2015\Projects\MovieLibrary\MovieLibrary\bin\AutoMapper.dll
+C:\Users\lenovo\Documents\Visual Studio 2015\Projects\MovieLibrary\MovieLibrary\bin\System.Net.Http.Formatting.dll
+C:\Users\lenovo\Documents\Visual Studio 2015\Projects\MovieLibrary\MovieLibrary\bin\System.Web.Http.dll
+C:\Users\lenovo\Documents\Visual Studio 2015\Projects\MovieLibrary\MovieLibrary\bin\System.Web.Http.WebHost.dll
+C:\Users\lenovo\Documents\Visual Studio 2015\Projects\MovieLibrary\MovieLibrary\bin\AutoMapper.xml
+C:\Users\lenovo\Documents\Visual Studio 2015\Projects\MovieLibrary\MovieLibrary\bin\System.Net.Http.Formatting.xml
+C:\Users\lenovo\Documents\Visual Studio 2015\Projects\MovieLibrary\MovieLibrary\bin\System.Web.Http.xml
+C:\Users\lenovo\Documents\Visual Studio 2015\Projects\MovieLibrary\MovieLibrary\bin\System.Web.Http.WebHost.xml
