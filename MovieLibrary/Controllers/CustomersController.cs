@@ -22,8 +22,10 @@ namespace MovieLibrary.Controllers
         public ActionResult New()
         {
             var membershipTypes = _context.MembershipTypes.ToList();
+            var customer = new Customer();
             var viewModel = new CustomerFormViewModel
             {
+                Customer = customer,
                 MembershipTypes = membershipTypes,
             };
 

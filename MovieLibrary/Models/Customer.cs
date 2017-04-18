@@ -5,6 +5,10 @@ namespace MovieLibrary.Models
 {
     public class Customer
     {
+        public Customer()
+        {
+            Id = 0;
+        }
         public int Id { get; set; }
 
         [Required(ErrorMessage = "Please enter customer name")]
