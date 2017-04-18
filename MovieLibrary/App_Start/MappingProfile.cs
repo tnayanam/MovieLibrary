@@ -1,10 +1,6 @@
 ﻿using AutoMapper;
 using MovieLibrary.Dtos;
 using MovieLibrary.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 
 namespace MovieLibrary.App_Start
 {
@@ -12,8 +8,17 @@ namespace MovieLibrary.App_Start
     {
         public MappingProfile()
         {
+            // Domain to Dto
             Mapper.CreateMap<Customer, CustomerDto>();
-            Mapper.CreateMap<CustomerDto, Customer>();
+            Mapper.CreateMap<Movie, MovieDto>();
+
+
+            // Dto to Domain
+            Mapper.CreateMap<CustomerDto, Customer>()
+                .ForMember(c => c.Id, opt => opt.Ignore());
+
+            Mapper.CreateMap<MovieDto, Movie>()
+                .ForMember(c => c.Id, opt => opt.Ignore());
         }
     }
 }
