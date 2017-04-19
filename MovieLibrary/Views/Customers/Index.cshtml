@@ -40,6 +40,7 @@ else
 @section scripts{
 <script>
     $(document).ready(function () {
+        $("#customers").DataTable();
         //find all class with element js-delete
         $("#customers").on("click", ".js-delete", function () {
             var button = $(this);
@@ -55,7 +56,6 @@ else
                         }
                     });
                 }
-
             });
         });
     });
