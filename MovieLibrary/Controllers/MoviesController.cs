@@ -26,10 +26,13 @@ namespace MovieLibrary.Controllers
         public ActionResult Index()
         {
             var movies = _context.Movies
-                .Include(m => m.Genre).ToList();
-            return View(movies);
+               .Include(m => m.Genre).ToList();
+            if (User.IsInRole(RoleName.CanManageMovies))
+                return View("List", movies);
+            return View("ReadOnlyList", movies);
         }
 
+        [Authorize(Roles = RoleName.CanManageMovies)]
         public ActionResult Details(int id)
         {
             var movie = _context.Movies
@@ -42,6 +45,7 @@ namespace MovieLibrary.Controllers
             return View(movie);
         }
 
+        [Authorize(Roles = RoleName.CanManageMovies)]
         public ActionResult New()
         {
             var viewModel = new MovieFormViewModel
@@ -51,6 +55,7 @@ namespace MovieLibrary.Controllers
             return View("MovieForm", viewModel);
         }
 
+        [Authorize(Roles = RoleName.CanManageMovies)]
         public ActionResult Edit(int id)
         {
             var movie = _context.Movies.SingleOrDefault(m => m.Id == id);
@@ -68,6 +73,7 @@ namespace MovieLibrary.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = RoleName.CanManageMovies)]
         public ActionResult Save(Movie movie)
         {
             if (!ModelState.IsValid)
