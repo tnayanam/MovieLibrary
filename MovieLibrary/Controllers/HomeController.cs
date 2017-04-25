@@ -12,6 +12,7 @@ namespace MovieLibrary.Controllers
             return View();
         }
 
+        [OutputCache(Duration = 0, VaryByParam = "*", NoStore = true)]
         public ActionResult About()
         {
             ViewBag.Message = "Your application description page.";
