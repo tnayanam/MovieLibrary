@@ -1,10 +1,12 @@
 ﻿using System.Web.Mvc;
+using System.Web.UI;
 
 namespace MovieLibrary.Controllers
 {
     [AllowAnonymous]
     public class HomeController : Controller
     {
+        [OutputCache(Duration = 60, Location = OutputCacheLocation.Server, VaryByParam = "*")]
         public ActionResult Index()
         {
             return View();
