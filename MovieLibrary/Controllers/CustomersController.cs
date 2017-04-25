@@ -1,8 +1,11 @@
 ﻿using MovieLibrary.Models;
 using MovieLibrary.ViewModel;
+using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
+using System.Runtime.Caching;
 using System.Web.Mvc;
+//using System.Runtime.Caching.MemoryCache;
 namespace MovieLibrary.Controllers
 {
     public class CustomersController : Controller
@@ -83,6 +86,14 @@ namespace MovieLibrary.Controllers
         // GET: Customers
         public ActionResult Index()
         {
+            if (MemoryCache.Default["Genres"] == null)
+            {
+                MemoryCache.Default["Genres"] = _context.Genres.ToList();
+
+            }
+
+            var genres = MemoryCache.Default["Genres"] as IEnumerable<Genre>;
+
             //var customers = _context.Customers
             //    .Include(c => c.MembershipType)
             //    .ToList();
