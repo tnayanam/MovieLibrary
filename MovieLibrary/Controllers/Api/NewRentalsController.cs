@@ -21,6 +21,23 @@ namespace MovieLibrary.Controllers.Api
             var customer = _context.Customers.Single(c => c.Id == newRental.CustomerId);
 
             var movies = _context.Movies.Where(m => newRental.MovieIds.Contains(m.Id));
+            //select * from movies where id in (1,2,3)
+
+            foreach (var movie in movies)
+            {
+                var rental = new Rental
+                {
+                    Movie = movie,
+                    Customer = customer,
+                    DateRented = DateTime.Now
+                };
+
+                _context.SaveChanges();
+            }
+
+            return Ok();
+
+
             throw new NotImplementedException();
         }
     }
