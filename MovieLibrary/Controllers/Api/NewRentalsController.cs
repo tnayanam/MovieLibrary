@@ -18,13 +18,28 @@ namespace MovieLibrary.Controllers.Api
         [HttpPost]
         public IHttpActionResult CreateNewRentals(NewRentalDto newRental)
         {
+            //if (newRental.MovieIds.Count == 0)
+            //    return BadRequest("No mvoie to add");
+
             var customer = _context.Customers.Single(c => c.Id == newRental.CustomerId);
 
-            var movies = _context.Movies.Where(m => newRental.MovieIds.Contains(m.Id));
+            //if (customer == null)
+            //    return BadRequest("CustomerId is not valid");
+
+
+
+            var movies = _context.Movies.Where(m => newRental.MovieIds.Contains(m.Id)).ToList();
             //select * from movies where id in (1,2,3)
+            //if (movies.Count != newRental.MovieIds.Count)
+            //    return BadRequest("one or more mvoiesId are invalid");
 
             foreach (var movie in movies)
             {
+                if (movie.NumberAvailable == 0)
+                    return BadRequest("Movie not abailble");
+
+                movie.NumberAvailable--;
+
                 var rental = new Rental
                 {
                     Movie = movie,
