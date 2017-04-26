@@ -13,6 +13,7 @@ namespace MovieLibrary
                            "~/Scripts/bootbox.js",
                            "~/Scripts/datatables/jquery.datatables.js",
                            "~/Scripts/datatables/datatables.bootstrap.js",
+                           "~/Scripts/typeahead.bundle.js",
                            "~/Scripts/respond.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
@@ -25,6 +26,7 @@ namespace MovieLibrary
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap-lumen.css",
+                      "~/Content/typeahead.css",
                       "~/Content/datatables/css/datatables.bootstrap.css",
                       "~/Content/site.css"));
         }
