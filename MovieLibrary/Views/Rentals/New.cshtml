@@ -10,7 +10,7 @@
     <div class="form-group">
         <label>Customer</label>
         <div class="tt-container">
-            <input id="customer" type="text" value="" class="form-control" />
+            <input id="customer" required type="text" value="" class="form-control" />
         </div>
     </div>
 
@@ -29,8 +29,12 @@
 
     <button class="btn btn-primary">Submit</button>
 </form>
+
+
+
 @section scripts
 {
+    @Scripts.Render("~/bundles/jqueryval")
     <script>
         $(document).ready(function () {
 
@@ -82,21 +86,26 @@
                 vm.movieIds.push(movie.id);
             });
 
-            $("#newRental").submit(function (e) {
-                e.preventDefault();
+            $("#newRental").validate(
+                {
+                    submitHandler: function()
+                    {
+                        e.preventDefault();
 
-                $.ajax({
-                    url: "/api/newRentals",
-                    method: "post",
-                    data: vm
-                })
-                .done(function () {
-                    console.log("done");
-                })
-                .fail(function () {
-
+                        $.ajax({
+                            url: "/api/newRentals",
+                            method: "post",
+                            data: vm
+                        })
+                        .done(function () {
+                            toastr.success("Rental added successfully.");
+                        })
+                        .fail(function () {
+                            toastr.error("Failed.");
+                        });
+                    }
                 });
-            });
+
         });
     </script>
 }
