@@ -3,6 +3,7 @@ using MovieLibrary.Dtos;
 using MovieLibrary.Models;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Web.Http;
 
@@ -17,9 +18,33 @@ namespace MovieLibrary.Controllers.Api
             _context = new ApplicationDbContext();
         }
 
-        public IEnumerable<MovieDto> GetMovies()
+        //public IEnumerable<MovieDto> GetMovies()
+        //{
+        //    return _context.Movies.ToList().Select(Mapper.Map<Movie, MovieDto>);
+        //}
+
+        //public IHttpActionResult GetMovie(int id)
+        //{
+        //    var movie = _context.Movies.SingleOrDefault(c => c.Id == id);
+
+        //    if (movie == null)
+        //        return NotFound();
+
+        //    return Ok(Mapper.Map<Movie, MovieDto>(movie));
+        //}
+
+        public IEnumerable<MovieDto> GetMovies(string query = null)
         {
-            return _context.Movies.ToList().Select(Mapper.Map<Movie, MovieDto>);
+            var moviesQuery = _context.Movies
+                .Include(m => m.Genre)
+                .Where(m => m.NumberAvailable > 0);
+
+            if (!String.IsNullOrWhiteSpace(query))
+                moviesQuery = moviesQuery.Where(m => m.Name.Contains(query));
+
+            return moviesQuery
+                .ToList()
+                .Select(Mapper.Map<Movie, MovieDto>);
         }
 
         public IHttpActionResult GetMovie(int id)
