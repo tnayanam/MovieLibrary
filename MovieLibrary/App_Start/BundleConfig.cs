@@ -29,6 +29,7 @@ namespace MovieLibrary
                       "~/Content/bootstrap-lumen.css",
                       "~/Content/typeahead.css",
                       "~/Content/toastr.css",
+                      "~/Content/bootstrap-theme.css",
                       "~/Content/datatables/css/datatables.bootstrap.css",
                       "~/Content/site.css"));
         }
