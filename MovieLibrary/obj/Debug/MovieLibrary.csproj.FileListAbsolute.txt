@@ -104,3 +104,4 @@ C:\Users\lenovo\Documents\Visual Studio 2015\Projects\MovieLibrary\MovieLibrary\
 C:\Users\lenovo\Documents\Visual Studio 2015\Projects\MovieLibrary\MovieLibrary\obj\Debug\MovieLibrary.Migrations.profiledata.resources
 C:\Users\lenovo\Documents\Visual Studio 2015\Projects\MovieLibrary\MovieLibrary\obj\Debug\MovieLibrary.Migrations.rental.resources
 C:\Users\lenovo\Documents\Visual Studio 2015\Projects\MovieLibrary\MovieLibrary\obj\Debug\MovieLibrary.Migrations.numberavailable.resources
+C:\Users\lenovo\Documents\Visual Studio 2015\Projects\MovieLibrary\MovieLibrary\bin\Elmah.dll
