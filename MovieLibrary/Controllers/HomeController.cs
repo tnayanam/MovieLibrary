@@ -22,6 +22,7 @@ namespace MovieLibrary.Controllers
 
         public ActionResult Contact()
         {
+            throw new HttpAntiForgeryException();
             ViewBag.Message = "Your contact page.";
 
             return View();
